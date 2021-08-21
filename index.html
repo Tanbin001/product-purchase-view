@@ -10,7 +10,7 @@
     <!-- TailWind CSS -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <!-- bootstrap style sheet  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
 </head>
 
@@ -39,94 +39,118 @@
     </header>
 
     <main>
-        <!-- purchase part start -->
-        <section class="container mt-4">
-            <div class="row ">
-                <!-- image part  -->
-                <div class="col-6">
-                    <img class="w-75" src="images/mac.png" alt="">
+        <!-- product section start -->
+        <section class="text-gray-600 body-font overflow-hidden">
+            <div class="px-5 py-24 mx-auto">
+                <div class="lg:w-4/5 mx-auto flex flex-wrap">
+                    <div>
+                        <img alt="ecommerce" class="object-cover object-center mr-24" width="500px" height="200px"
+                            src="images/mac.png">
+                    </div>
+                    <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+                        <!-- desciption part  -->
+                        <div class="mb-4">
+                            <h2 class="font-semibold text-4xl pb-4 text-black">Customize your Blue 24-inch iMac with Apple M1 chip</h2>
+                            <p>Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency cores, 7-core GPU
+                                and
+                                16-core Neural Engine 8GB unified memory 256GB SSD Stroage Two Thunderbolt/USB 4ports
+                                Maagic
+                                Mouse Magic Keyboard-US English</p>
+                        </div>
+                        <!-- add memory part  -->
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-xl pb-4 text-black">Memory</h4>
+                            <button id="add-8gb-memory" type="button"
+                                class="bg-white border-2 focus:outline-none focus:ring-2 focus:ring-grey-600 focus:ring-opacity-50 border-black text-base text-black rounded p-2">8GB
+                                unified
+                                memory
+                            </button>
+                            <button id="add-16gb-memory" type="button"
+                                class="bg-white border-2 focus:outline-none focus:ring-2 focus:ring-grey-600 focus:ring-opacity-50 border-black text-base text-black rounded p-2">16GB
+                                unified
+                                memory
+                            </button>
+                        </div>
+                        <!-- Storage part  -->
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-xl pb-4 text-black">Storage</h4>
+                            <button id="add-256gb-ssd" type="button"
+                                class="bg-white border-2 focus:outline-none focus:ring-2 focus:ring-grey-600 focus:ring-opacity-50 border-black text-base text-black rounded p-2">256GB
+                                SSD
+                                storage</button>
+                            <button id="add-512gb-ssd" type="button"
+                                class="bg-white border-2 focus:outline-none focus:ring-2 focus:ring-grey-600 focus:ring-opacity-50 border-black text-base text-black rounded p-2">512GB
+                                SSD
+                                storage</button>
+                            <button id="add-1tb-ssd" type="button"
+                                class="bg-white border-2 focus:outline-none focus:ring-2 focus:ring-grey-600 focus:ring-opacity-50 border-black text-base text-black rounded p-2">1TB
+                                SSD
+                                storage</button>
+                        </div>
+                        <!-- Shipment part  -->
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-xl pb-4 text-black">Choose your delivary option</h4>
+                            <button id="free-delivery" type="button"
+                                class="bg-white border-2 focus:outline-none focus:ring-2 focus:ring-grey-600 focus:ring-opacity-50 border-black text-base text-black rounded p-2">Friday,Aug
+                                27 Free
+                                Prime
+                                Delivery</button>
+                            <button id="paid-delivary" type="button"
+                                class="bg-white border-2 focus:outline-none focus:ring-2 focus:ring-grey-600 focus:ring-opacity-50 border-black text-base text-black rounded p-2">Friday,Aug
+                                21
+                                Delivery
+                                charge
+                                $20</button>
+                        </div>
+                        <!-- additinal price / total price calculation part -->
+                        <div class="grid grid-cols-3 mt-4 pt-4 ">
+                            <div class="col-span-2 pr-0">
+                                <h5 class="font-semibold text-xl pb-4 text-black">Best Price</h5>
+                                <hr>
+                                <h5 class="font-semibold text-xl pb-4 text-black">Extra Memory Cost</h5>
+                                <hr>
+                                <h5 class="font-semibold text-xl pb-4 text-black">Extra Storage Cost</h5>
+                                <hr>
+                                <h5 class="font-semibold text-xl pb-4 text-black">Delivary Charge</h5>
+                                <hr class="p-1">
+                                <h5 class="font-semibold text-xl pb-4 text-black">Total Price</h5>
+                            </div>
+                            <div class=" pl-0">
+                                <h5 class="font-semibold text-xl pb-4">$<span id="best-price">1299</span></h5>
+                                <hr>
+                                <h5 class="font-semibold text-xl pb-4">$<span id="memory-cost">0</span></h5>
+                                <hr>
+                                <h5 class="font-semibold text-xl pb-4">$<span id="storage-cost">0</span></h5>
+                                <hr>
+                                <h5 class="font-semibold text-xl pb-4">$<span id="delivary-cost">0</span></h5>
+                                <hr class="p-1">
+                                <h5 class="font-semibold text-xl pb-4">$<span id="total-price">1299</span></h5>
+                                <h5></h5>
+                            </div>
+                            <div class="col-span-3 my-4">
+                                <h5 class="font-semibold text-xl pb-4 text-black">Add Promo Code</h5>
+                                <!-- <input class="border-4" id="coupon-input" type="text"> -->
+                                <input id="coupon-input"
+                                    class="border border-black focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent w-56 h-10">
+                                <button id="coupon-apply"
+                                    class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110 p-2 text-white text-2xl rounded">
+                                    Apply
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="container col-6 d-flex flex-column">
-                    <!-- desciption part  -->
-                    <div class="mb-4">
-                        <h2>Customize your Blue 24-inch iMac with Apple M1 chip</h2>
-                        <p>Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency cores, 7-core GPU and
-                            16-core Neural Engine 8GB unified memory 256GB SSD Stroage Two Thunderbolt/USB 4ports Maagic
-                            Mouse Magic Keyboard-US English</p>
-                    </div>
-                    <!-- add memory part  -->
-                    <div class="mb-4">
-                        <h4>Memory</h4>
-                        <button id="add-8gb-memory" type="button" class="btn border-3 border-dark">8GB unified memory
-                        </button>
-                        <button id="add-16gb-memory" type="button" class="btn border-3 border-dark">16GB unified memory
-                        </button>
-                    </div>
-                    <!-- Storage part  -->
-                    <div class="mb-4">
-                        <h4>Storage</h4>
-                        <button id="add-256gb-ssd" type="button" class="btn border-3 border-dark">256GB SSD
-                            storage</button>
-                        <button id="add-512gb-ssd" type="button" class="btn border-3 border-dark">512GB SSD
-                            storage</button>
-                        <button id="add-1tb-ssd" type="button" class="btn border-3 border-dark">1TB SSD storage</button>
-                    </div>
-                    <!-- Shipment part  -->
-                    <div class="mb-4">
-                        <h4>Choose your delivary option</h4>
-                        <button id="free-delivery" type="button" class="btn border-3 border-dark">Friday,Aug 27 Free
-                            Prime
-                            Delivery</button>
-                        <button id="paid-delivary" type="button" class="btn border-3 border-dark">Friday,Aug 21 Delivery
-                            charge
-                            $20</button>
-                    </div>
-                    <!-- additinal price / total price calculation part -->
-                    <div class="row mt-4 pt-4 ">
-                        <div class="col-6 pe-0">
-                            <h5>Best Price</h5>
-                            <hr>
-                            <h5>Extra Memory Cost</h5>
-                            <hr>
-                            <h5>Extra Storage Cost</h5>
-                            <hr>
-                            <h5>Delivary Charge</h5>
-                            <hr class="p-1">
-                            <h5>Total Price</h5>
-                        </div>
-                        <div class="col-4 ps-0">
-                            <h5>$<span id="best-price">1299</span></h5>
-                            <hr>
-                            <h5>$<span id="memory-cost">0</span></h5>
-                            <hr>
-                            <h5>$<span id="storage-cost">0</span></h5>
-                            <hr>
-                            <h5>$<span id="delivary-cost">0</span></h5>
-                            <hr class="p-1">
-                            <h5>$<span id="total-price">1299</span></h5>
-                            <h5></h5>
-                        </div>
-                        <div class="col-10 my-4">
-                            <h5>Add Promo Code</h5>
-                            <input id="coupon-input" type="text">
-                            <button id="coupon-apply" class="btn btn-danger mx-4">Apply</button>
-                        </div>
-                    </div>
-
+                <hr>
+                <!-- Total price part -->
+                <div>
+                    <h2 class="text-center font-bold text-4xl p-4">Total: $<span id="total">1299</span></h2>
                 </div>
-            </div>
-            <hr>
-            <!-- Total price part -->
-            <div>
-                <h2 class="text-center my-4">Total: $<span id="total">1299</span></h2>
-            </div>
-
         </section>
-        <!-- purchase part end -->
+        <!-- product section end -->
 
         <!-- gallery part start -->
         <section class="text-gray-600 body-font">
-            <div class="container px-5 py-24 mx-auto">
+            <div class="px-5 py-24 mx-auto">
                 <div class="flex flex-col text-center w-full mb-20">
                     <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Draws you in. Blows you
                         away.</h1>
@@ -235,14 +259,19 @@
         <!-- Footer part start -->
         <footer class="text-gray-600 body-font">
             <div class="px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-                <a class="flex title-font font-medium items-center text-gray-900 md:mb-0 ">
+                <a class="flex title-font font-medium items-center text-gray-900 md:mb-0 no-underline">
                     <img src="images/macbook.png" alt="">
                     <span class="ml-3 text-3xl font-mono font-semibold">The Macs</span>
                 </a>
-                <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">©
-                    2020 The Macs —
-                    <a href="#" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@TanbinSiddique</a>
-                </p>
+                <div class="md:ml-auto md:mr-auto pl-36 flex flex-wrap items-center text-base justify-center">
+                    <p
+                        class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:pr-4 sm:border-l-2 sm:border-r-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+                        ©
+                        2020 The Macs —
+                        <a href="https://www.facebook.com/IntroVerse.siddiqui" class="text-gray-600 ml-1 no-underline no-underline hover:underline" rel="noopener noreferrer"
+                            target="_blank">@TanbinSiddique</a>
+                    </p>
+                </div>
                 <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
                     <a class="text-gray-500">
                         <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
